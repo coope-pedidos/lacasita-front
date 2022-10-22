@@ -8,16 +8,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "lomo": "url('/images/lomitovegano.jpg')",
-        "locro": "url('/images/locro.jpg')",
-        "hambur": "url('/images/hamburguesa.jpg')",
-        "sorren": "url('/images/sorren.jpg')",
-      },
       textShadow: {
         sm: "0 1px 2px var(--tw-shadow-color)",
         DEFAULT: "0 2px 4px var(--tw-shadow-color)",
         lg: "0 8px 16px var(--tw-shadow-color)",
+      },
+      fontSize: {
+        xl45: "2.60rem",
       },
     },
   },
