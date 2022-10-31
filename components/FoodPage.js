@@ -1,5 +1,5 @@
 import React from "react"
-import { calculateTotalPrice } from "./calculateTotalPrice"
+import { calcularPrecioTotal } from "./calcularPrecioTotal"
 
 export class FoodPage extends React.Component {
 	constructor(props) {
@@ -11,7 +11,7 @@ export class FoodPage extends React.Component {
 	}
 	setTotal(ammount, food) {
 		this.setState({
-			total: calculateTotalPrice(ammount, food),
+			total: calcularPrecioTotal(ammount, food),
 		})
 	}
 	updateAmmount(boolean) {
@@ -84,20 +84,15 @@ function Dias(props) {
 function Variedades(props) {
 	if (props.variedades.length) {
 		return (
-			<p className="self-start">
+			<div className="self-start">
 				<p>Variedades:</p>
 				<br />
 
 				{props.variedades.map((paragraph, index) => {
-					return (
-						<>
-							{paragraph}
-							<br />
-						</>
-					)
+					return <p key={index}>{paragraph}</p>
 				})}
 				<br />
-			</p>
+			</div>
 		)
 	}
 }

@@ -38,6 +38,7 @@ export const comidas = [
 		keyword: "locro",
 		img: "locro.jpg",
 		desc: "Cuero de chancho, porotos y zapallo, que mas queré",
+		variedades: [],
 		precio: 850,
 		promo: 0,
 		id: 4,
