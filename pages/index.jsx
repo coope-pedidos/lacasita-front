@@ -13,21 +13,42 @@ class Main extends React.Component {
 			subTotal: 0,
 		}
 	}
-	agregarAlCarro(comida, cantidad, total) {
-		if (!this.state.cartElements.some(obj => obj.nombre === comida)) {
+	agregarAlCarro(id, nombre, img, precioUnidad, precioPromo, cantidad) {
+		if (!cantidad) return
+		if (!this.state.cartElements.length) {
 			this.setState({
 				cartElements: [
 					{
-						nombre: comida,
-						cantidad: cantidad,
-						total: total,
+						id,
+						nombre,
+						img,
+						precioUnidad,
+						precioPromo,
+						cantidad,
 					},
 				],
 			})
+		} else if (!this.state.cartElements.some(obj => obj.id === id)) {
+			this.state.cartElements.push({
+				id,
+				nombre,
+				img,
+				precioUnidad,
+				precioPromo,
+				cantidad,
+			})
 		} else {
-			this.state.cartElements.find(o => o.nombre === comida).cantidad +=
-				cantidad
-			this.state.cartElements.find(o => o.nombre === comida).total += total
+			this.state.cartElements.find(o => o.id === id).cantidad += cantidad
+		}
+	}
+	eliminarDelCarro(id, removerTodo = false) {
+		if (!removerTodo) {
+			if (this.state.cartElements.find(o => o.id === id).cantidad <= 1) return
+			this.state.cartElements.find(o => o.id === id).cantidad -= cantidad
+		} else {
+			this.state.cartElements.splice(
+				this.state.cartElements.findIndex(e => e.id === id)
+			)
 		}
 	}
 	openFoodPage(food) {
@@ -35,8 +56,22 @@ class Main extends React.Component {
 			currentPage: (
 				<FoodPage
 					food={food}
-					agregarAlCarro={(comida, cantidad, total) =>
-						this.agregarAlCarro(comida, cantidad, total)
+					agregarAlCarro={(
+						id,
+						nombre,
+						img,
+						precioUnidad,
+						precioPromo,
+						cantidad
+					) =>
+						this.agregarAlCarro(
+							id,
+							nombre,
+							img,
+							precioUnidad,
+							precioPromo,
+							cantidad
+						)
 					}
 				/>
 			),
@@ -49,7 +84,7 @@ class Main extends React.Component {
 	}
 	openCartPage() {
 		this.setState({
-			currentPage: <Cart />,
+			currentPage: <Cart cartElements={this.state.cartElements} />,
 		})
 	}
 	render() {

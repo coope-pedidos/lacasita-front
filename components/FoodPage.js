@@ -49,10 +49,9 @@ export class FoodPage extends React.Component {
 				</div>
 				<Total total={this.state.total} />
 				<AgregarPedido
-					comida={food.nombre}
+					{...food}
 					cantidad={this.state.currentAmmount}
-					total={this.state.total}
-					agregar={this.props.agregarAlCarro}
+					funccionAgregar={this.props.agregarAlCarro}
 				/>
 			</>
 		)
@@ -122,7 +121,7 @@ text-shadow shadow-gray-600">
 		</p>
 	)
 }
-function CantidadDeProducto(props) {
+export function CantidadDeProducto(props) {
 	return (
 		<div className="flex flex-col items-end my-5 ">
 			<div className="flex items-center">
@@ -169,7 +168,16 @@ function AgregarPedido(props) {
 	return (
 		<div
 			className="fixed w-screen h-10 bg-green-400 bottom-0 left-0 font-bold flex items-center justify-center text-xl text-white text-shadow-brd shadow-green-900 cursor-pointer"
-			onClick={() => props.agregar(props.comida, props.cantidad, props.total)}>
+			onClick={() =>
+				props.funccionAgregar(
+					props.id,
+					props.nombre,
+					props.img,
+					props.precio,
+					props.promo,
+					props.cantidad
+				)
+			}>
 			Agregar Pedido
 		</div>
 	)

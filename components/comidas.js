@@ -1,7 +1,6 @@
 export const comidas = [
 	{
 		nombre: "Lomito Vegano",
-		keyword: "lomo",
 		img: "lomitovegano.jpg",
 		desc: "Pan casero, mayonesa de aquafaba, lechuga, tomate, salsa criolla, bife de seitán, repollo saltado, queso de girasol y porcion de papas.",
 		variedades: [],
@@ -12,7 +11,6 @@ export const comidas = [
 	},
 	{
 		nombre: "Hamburguesa Vegana",
-		keyword: "hambur",
 		img: "hamburguesa.jpg",
 		desc: "Pan casero, mayonesa de aquafaba, lechuga, tomate, cebolla morada caramelizada, hamburguesa de garbanzos, huevo de tofu, pasta de zanahoria, y porción de papas.",
 		variedades: [],
@@ -23,7 +21,6 @@ export const comidas = [
 	},
 	{
 		nombre: "Sorrentinos",
-		keyword: "sorren",
 		img: "sorren.jpg",
 		"sub-titulo-1": "Variedades:",
 		desc: "",
@@ -35,7 +32,6 @@ export const comidas = [
 	},
 	{
 		nombre: "Locro",
-		keyword: "locro",
 		img: "locro.jpg",
 		desc: "Cuero de chancho, porotos y zapallo, que mas queré",
 		variedades: [],
