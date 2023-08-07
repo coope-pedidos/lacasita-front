@@ -6,7 +6,7 @@ import { menuStyles } from "./styles"
 export default function Home() {
 	return (
 		<>
-			<h1 className={menuStyles.title}>La Coope Pedidos</h1>
+			<h1 className={menuStyles.title}>La Casita Cooperativa</h1>
 			<nav className={menuStyles.btnList}>
 				{Comidas.map(comida => {
 					return (

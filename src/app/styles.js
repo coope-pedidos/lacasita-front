@@ -7,8 +7,7 @@ export const navbarStyles = {
 	cartImg: 'cursor-pointer',
 }
 export const layoutStyles = {
-	main:
-		'flex flex-col items-center overflow-scroll fixed w-screen h-screen bg-gradient-to-br from-green-200 to-green-300 overflow-x-hidden',
+	main: 'flex flex-col items-center overflow-scroll fixed w-screen h-screen bg-gradient-to-br from-green-200 to-green-300 overflow-x-hidden',
 }
 export const menuStyles = {
 	title:
@@ -44,6 +43,8 @@ export const contadorStyles = {
 	contadorOuter: 'flex justify-between items-center h-full w-1/5',
 	contadorMasMenos:
 		'h-2/3 flex w-1/3 justify-center drop-shadow-md shadow-green-900 items-center font-bold text-3xl border-2 border-green-900 cursor-pointer rounded-lg hover:border-green-300 hover:text-lime-200',
+	contadorMasMenosCard: 'bg-green-500',
+	contadorCant: 'flex items-center justify-center font-bold text-xl',
 }
 
 export const closeButtonStyles = {

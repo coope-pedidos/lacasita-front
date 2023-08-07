@@ -25,7 +25,12 @@ export const TotalYContador = ({
 			<div className="text-green-600 text-2xl">
 				{'$ ' + calcularTotal({ cantidad, precio, promo })}
 			</div>
-			<Contador cantidad={cantidad} cambiar={cambiar} elementId={elementId} />
+			<Contador
+				cantidad={cantidad}
+				cambiar={cambiar}
+				elementId={elementId}
+				card={true}
+			/>
 		</div>
 	)
 }

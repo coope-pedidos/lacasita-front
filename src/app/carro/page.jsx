@@ -1,6 +1,7 @@
 'use client'
 import { Card } from '@/components/cartCards'
 import { usarContextoCarro } from '@/context/cartContext'
+import { foodPageStyles } from '../styles'
 
 export default function Cart() {
 	const { cart, setCart } = usarContextoCarro()
@@ -40,6 +41,10 @@ export default function Cart() {
 					El carro está vacio!!
 				</div>
 			)}
+			<div className="h-24"></div>
+			<div className="fixed w-full h-14 cursor-pointer text-green-50 hover:text-lime-100 text-2xl hover:font-bold bg-gradient-to-r from-green-300 hover:via-green-500 hover:to-green-700 to-green-700  bottom-0 flex items-center justify-center">
+				Hacer Pedido
+			</div>
 		</div>
 	)
 }
