@@ -1,36 +1,40 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require("tailwindcss/plugin")
 
 module.exports = {
 	content: [
-		"./pages/**/*.{js,ts,jsx,tsx}",
-		"./components/**/*.{js,ts,jsx,tsx}",
+		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	theme: {
 		extend: {
-			textShadow: {
-				sm: "0 1px 2px var(--tw-shadow-color)",
-				DEFAULT: "0 2px 4px var(--tw-shadow-color)",
-				lg: "0 8px 16px var(--tw-shadow-color)",
-				brd: "2px 0 var(--tw-shadow-color), -2px 0 var(--tw-shadow-color), 0 2px var(--tw-shadow-color), 0 -2px var(--tw-shadow-color), 1px 1px var(--tw-shadow-color), -1px -1px var(--tw-shadow-color), 1px -1px var(--tw-shadow-color), -1px 1px var(--tw-shadow-color)",
-				brdsm:
-					"1px 0 var(--tw-shadow-color), -1px 0 var(--tw-shadow-color), 0 1px var(--tw-shadow-color), 0 -1px var(--tw-shadow-color), 1px 1px var(--tw-shadow-color), -1px -1px var(--tw-shadow-color), 1px -1px var(--tw-shadow-color), -1px 1px var(--tw-shadow-color)",
-			},
 			fontSize: {
-				xl45: "2.60rem",
+				xl45: '2.60rem',
+			},
+			gridTemplateRows: {
+				8: 'repeat(8, minmax(0, 1fr))',
+				9: 'repeat(9, minmax(0, 1fr))',
+				10: 'repeat(10, minmax(0, 1fr))',
+				11: 'repeat(11, minmax(0, 1fr))',
+				12: 'repeat(11, minmax(0, 1fr))',
+				13: 'repeat(11, minmax(0, 1fr))',
+			},
+			gridRowStart: {
+				8: '8',
+				9: '9',
+				10: '10',
+				11: '11',
+				12: '12',
+				13: '13',
+			},
+			dropShadow: {
+				titleBW: ['0px 0px 1px #040', '0px 0px 2px black', '0px 0px 5px white'],
+				blackBorder: '0px 0px 2px black',
+			},
+			screens: {
+				priority: '0px',
 			},
 		},
 	},
-	plugins: [
-		plugin(function ({ matchUtilities, theme }) {
-			matchUtilities(
-				{
-					"text-shadow": value => ({
-						textShadow: value,
-					}),
-				},
-				{ values: theme("textShadow") }
-			)
-		}),
-	],
+	plugins: [require('daisyui')],
 }
