@@ -25,7 +25,15 @@ export const Promo = ({ promo }) => {
 }
 
 export const Dias = ({ dias }) => {
-	return <div className={foodPageStyles.dias}>Todos los {dias}!</div>
+	let diasStr = (() => {
+		if (dias.length === 1) return dias + '.'
+		if (dias.length === 2) return dias[0] + ' y ' + dias[1] + '.'
+		const lastElement = dias.pop()
+		console.log(lastElement)
+		return dias.join(', ') + ' y ' + lastElement + '.'
+	})()
+
+	return <div className={foodPageStyles.dias}>Todos los {diasStr}</div>
 }
 export const Total = ({ cantidad, precio, promo }) => {
 	return (

@@ -25,7 +25,7 @@ export const foodPageStyles = {
 		'hero-overlay bg-opacity-30 bg-gradient-to-br from-green-200 via-transparent to-green-900/80',
 	title:
 		'h-fit font-bold text-6xl py-5 drop-shadow-titleBW bg-gradient-to-br from-lime-400 to-green-500 text-transparent bg-clip-text text-center min-h-20',
-	column: 'self-start mt-10 w-5/6 h-3/5 flex flex-col justify-between',
+	column: 'self-start mt-10 w-5/6 lg:w-2/4 h-3/5 flex flex-col justify-between',
 	description:
 		'mb-5 max-w-lg self-center font-medium backdrop-blur-xl  bg-opacity-70 border-2 border-green-300 rounded-lg p-2',
 	precioYPromoCont: 'self-end flex flex-col justify-between items-end',
@@ -35,7 +35,7 @@ export const foodPageStyles = {
 		'bg-gradient-to-br from-lime-200 to-green-400 text-transparent bg-clip-text text-5xl font-bold',
 	dias: 'self-end text-2xl text-lime-100',
 	bottomDiv:
-		'p-2 fixed bottom-0 left-0 w-full h-1/6 bg-gradient-to-br from-green-500 to-green-800 flex flex-col items-stretch justify-items-stretch',
+		'p-2 lg:px-52 xl:px-64 fixed bottom-0 left-0 w-full h-1/6 bg-gradient-to-br from-green-500 to-green-800 flex flex-col items-stretch justify-items-stretch',
 	total: 'flex items-center justify-center text-2xl font-bold',
 }
 
@@ -50,4 +50,11 @@ export const contadorStyles = {
 export const closeButtonStyles = {
 	wrapper: 'w-7 h-10 overflow-hidden m-2',
 	button: 'btn btn-circle btn-outline btn-error w-full priority:h-7 min-h-0',
+}
+
+export const carroStyles = {
+	hacerPedido:
+		'fixed w-full h-14 cursor-pointer text-green-50 hover:text-lime-100 text-2xl hover:font-bold bg-gradient-to-r from-green-300 hover:via-green-500 hover:to-green-700 to-green-700  bottom-0 flex items-center justify-center ',
+	hacerPedidoNO:
+		'fixed w-full h-14 cursor-pointer text-white  text-2xl bg-gradient-to-r from-slate-300 to-slate-700  bottom-0 flex items-center justify-center ',
 }

@@ -2,8 +2,7 @@ export const Comidas = [
 	{
 		nombre: 'Lomito Vegano',
 		img: 'lomitovegano.jpg',
-		desc:
-			'Una delicia sin crueldad de pan casero, mayonesa de aquafaba, lechuga, tomate, salsa criolla, bife de seitán, repollo saltado, queso de girasol y papas crocantes y cremosas.',
+		desc: 'Una delicia sin crueldad de pan casero, mayonesa de aquafaba, lechuga, tomate, salsa criolla, bife de seitán, repollo saltado, queso de girasol y papas crocantes y cremosas.',
 		variedades: [],
 		precio: 600,
 		promo: 1000,
@@ -13,8 +12,7 @@ export const Comidas = [
 	{
 		nombre: 'Hamburguesa Vegana',
 		img: 'hamburguesa.jpg',
-		desc:
-			'Pan casero, mayonesa de aquafaba, lechuga, tomate, cebolla morada caramelizada, hamburguesa de garbanzos, huevo de tofu, pasta de zanahoria, y porción de papas.',
+		desc: 'Pan casero, mayonesa de aquafaba, lechuga, tomate, cebolla morada caramelizada, hamburguesa de garbanzos, huevo de tofu, pasta de zanahoria, y porción de papas.',
 		variedades: [],
 		precio: 550,
 		promo: 950,
@@ -42,10 +40,20 @@ export const Comidas = [
 		id: 4,
 		dias: ['25 de mayo', '20 de junio', '9 de julio'],
 	},
+	{
+		nombre: 'Empanadas',
+		img: 'empanadas.jpg',
+		desc: 'Deliciosas empanadas criollas como las de la abuela, bien jugosas. (por docena)',
+		variedades: ['Dulces, Saladas, Arabes'],
+		precio: 2000,
+		promo: 3500,
+		id: 5,
+		dias: [`viernes`, 'sabados', `feriados`],
+	},
 ]
 export const Paginas = {
 	Menu: '/',
 	Comida: '/comida',
-	Formulario: '/formulario',
+	Formulario: '/form',
 	Carro: '/carro',
 }

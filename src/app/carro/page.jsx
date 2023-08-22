@@ -1,7 +1,9 @@
 'use client'
 import { Card } from '@/components/cartCards'
 import { usarContextoCarro } from '@/context/cartContext'
-import { foodPageStyles } from '../styles'
+import { carroStyles, foodPageStyles } from '../styles'
+import Link from 'next/link'
+import { Paginas } from '../../../config'
 
 export default function Cart() {
 	const { cart, setCart } = usarContextoCarro()
@@ -22,9 +24,10 @@ export default function Cart() {
 			setCart({ ...cart, [foodId]: cart[foodId] - 1 })
 		}
 	}
+	let isNotEmpty = Object.keys(cart).length > 0 ? true : false
 	return (
 		<div className="pt-20 flex flex-col items-center w-full">
-			{Object.keys(cart).length ? (
+			{isNotEmpty ? (
 				Object.keys(cart).map(cartElementKey => {
 					return (
 						<Card
@@ -42,8 +45,13 @@ export default function Cart() {
 				</div>
 			)}
 			<div className="h-24"></div>
-			<div className="fixed w-full h-14 cursor-pointer text-green-50 hover:text-lime-100 text-2xl hover:font-bold bg-gradient-to-r from-green-300 hover:via-green-500 hover:to-green-700 to-green-700  bottom-0 flex items-center justify-center">
-				Hacer Pedido
+			<div
+				className={
+					isNotEmpty ? carroStyles.hacerPedido : carroStyles.hacerPedidoNO
+				}>
+				<Link href={isNotEmpty ? Paginas.Formulario : Paginas.Carro}>
+					Hacer Pedido
+				</Link>
 			</div>
 		</div>
 	)
